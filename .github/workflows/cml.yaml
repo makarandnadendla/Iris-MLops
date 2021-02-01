@@ -16,5 +16,10 @@ jobs:
           python iris.py
 
           # Write your CML report
-          echo "MODEL METRICS"
-          cat metrics.txt
+          echo "## MODEL METRICS" > report.md
+          cat metrics.txt >> report.md
+          
+          echo "## Data Visuals" >> report.md
+          cml_publish feature_importance.png --md >> report.md 
+          
+          cml-send-comment report.md
