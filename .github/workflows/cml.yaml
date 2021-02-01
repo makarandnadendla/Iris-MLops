@@ -20,6 +20,6 @@ jobs:
           cat metrics.txt >> report.md
           
           echo "## Data Visuals" >> report.md
-          cml_publish feature_importance.png --md >> report.md 
+          cml-publish feature_importance.png --md >> report.md 
           
           cml-send-comment report.md
